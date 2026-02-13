@@ -1,56 +1,76 @@
-#include "Animal.h"
-#include "Dog.h"
-#include "Cat.h"
-#include "WrongAnimal.h"
-#include "WrongCat.h"
+#include "Bureaucrat.h"
 #include <iostream>
 
 int main(void)
 {
-    std::cout << "\n===1. Subject Test (Polymorphism)===\n" << std::endl;
+    // -------------------------------------------------------------------------
+    // TEST 1: Normal increment
+    // -------------------------------------------------------------------------
+    std::cout << "\n===1. Test 1: Normal Operation\n" << std::endl;
+    try {
 
-    const Animal *meta = new Animal();
-    const Animal *j      = new Dog();//This is upcasting. look below
-    const Animal *i      = new Cat();
+    }
+    catch {
 
-    std::cout << std::endl;
-
-    std::cout << j-> getType() << " " << std::endl;
-    std::cout << i-> getType() << " " << std::endl;
-    i-> makeSound();
-    j-> makeSound();
-    meta -> makeSound();
+    }
 
     std::cout << std::endl;
 
-    delete i;
-    delete j;
-    delete meta;
+    // -------------------------------------------------------------------------
+    // TEST 2: Constructor Exception : Grade too high
+    // -------------------------------------------------------------------------
 
-    std::cout << "\n===2. Wrong Class Test (No polymorphism) ===\n" << std::endl;
+    std::cout << "\n===1. Test 2: Constructor (Grade too high)\n" << std::endl;
+    try {
 
-    const WrongAnimal* wrongMeta = new WrongAnimal();
-    const WrongAnimal* wrongCat = new WrongCat();
+    }
+    catch {
 
-    std::cout << std::endl;
-
-    std::cout << "WrongCat make sound like this=====>";
-    wrongCat->makeSound();
-    std::cout << "WrongMeta make sound like this=====>";
-    wrongMeta->makeSound();
+    }
 
     std::cout << std::endl;
 
-    delete wrongCat;
-    delete wrongMeta;
+    // -------------------------------------------------------------------------
+    // TEST 3: Constructor Exception : Grade is too low
+    // -------------------------------------------------------------------------
+
+    std::cout << "\n===1. Test 3: Constructor (Grade too low)\n" << std::endl;
+    try {
+
+    }
+    catch {
+
+    }
+
+    std::cout << std::endl;
+
+    // -------------------------------------------------------------------------
+    // TEST 4: Over Upgrading : Higher than Grade 1
+    // -------------------------------------------------------------------------
+
+    std::cout << "\n===1. Test 4: Higher than Grade 1\n" << std::endl;
+    try {
+
+    }
+    catch {
+
+    }
+
+    std::cout << std::endl;
+
+    // -------------------------------------------------------------------------
+    // TEST 5: Over Downgrading : Lower than Grade 150
+    // -------------------------------------------------------------------------
+
+    std::cout << "\n===1. Test 5: Lower than Grade 150\n" << std::endl;
+    try {
+
+    }
+    catch {
+
+    }
+
+    std::cout << std::endl;
 
     return (0);
 }
-
-/*
-// Animal* 하나로 개와 고양이를 동시에 관리 가능 (매우 효율적)
-Animal* zoo[2];
-
-zoo[0] = new Dog(); // Dog -> Animal* (업캐스팅)
-zoo[1] = new Cat(); // Cat -> Animal* (업캐스팅)
-*/
