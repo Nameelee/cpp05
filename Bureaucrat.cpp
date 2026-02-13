@@ -1,5 +1,7 @@
 #include "Bureaucrat.h"
 
+/* ==========Orthodox Canonical Form========== */
+
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {
 }
 
@@ -10,26 +12,53 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade
         throw Bureaucrat::GradeTooLowException();
 }
 
-Cat::Cat(const Cat &copy) : Animal(copy)
-{
-    *this = copy;
-    std::cout << type << "Copy constructor called" <<std::endl;
+Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name), _grade(copy._grade) {
 }
 
-Cat& Cat::operator=(const Cat& assign)
-{
-    if (this != &assign) {
-        Animal::operator=(assign);
-        std::cout << type << " Copy Assignment operator called" <<std::endl;       
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
+    if (this != & other) {
+        this->_grade = other._grade;
     }
     return *this;
 }
 
-Cat::~Cat() {
-    std::cout << type << " Destructor called" << std::endl;
+Bureaucrat::~Bureaucrat()
+{
 }
 
-void Cat::makeSound() const
-{
-    std::cout << "Mew Mew!" << std::endl;
+/* ==========Member Functions========== */
+
+std::string Bureaucrat::getName() const {
+    return _name;
+}
+
+int Bureaucrat::getGrade() const {
+    return _grade;
+}
+
+void Bureaucrat::incrementGrade() {
+    if (_grade <= 1)
+        throw Bureaucrat::GradeTooHighException();
+    _grade--;
+}
+
+void Bureaucrat::decrementGrade() {
+    if (_grade >= 150)
+        throw Bureaucrat::GradeTooLowException();
+    _grade++;
+}
+
+/* ==========Exception Classes========== */
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() {//I don't understand
+    return "Grade is too high!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+    return "Grade is too low!";
+}
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
+    os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
+    return os;
 }
