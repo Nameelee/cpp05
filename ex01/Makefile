@@ -1,5 +1,5 @@
 
-NAME = Bureaucrat
+NAME = Maggots
 
 CXX = clang++
 

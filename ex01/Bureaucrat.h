@@ -24,10 +24,9 @@ class Bureaucrat {
         void incrementGrade();
         void decrementGrade();
 
-        class GradeTooHighException : public std::exception//I will be inherited by public from 'std::exception' class
-        {
-            public:
-                virtual const char* what() const throw();
+        class GradeTooHighException : public std::exception {
+        public:
+            virtual const char* what() const throw();
         };
 
         class GradeTooLowException : public std::exception {
