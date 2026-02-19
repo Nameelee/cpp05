@@ -22,11 +22,28 @@ class Form
         Form(const Form & obj);
         Form& operator=(const Form & obj);
         ~Form();
+
         //Getters
         std::string getName() const;
         bool        getIsSigned() const;
         int         getGradeToSign() const;
         int         getGradeToExecute() const;
+
+        //Main Functionality
+        void        beSigned(const Bureaucrat& Bureaucrat);
+
+        //Exception Classes
+        class GradeTooHighException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+
+        class GradeTooLowException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
 };
 
 std::ostream & operator<<(std::ostream& os, const Form & form);

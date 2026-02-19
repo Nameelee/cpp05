@@ -1,4 +1,5 @@
 #include "Bureaucrat.h"
+#include "Form.h"
 
 /* ==========Orthodox Canonical Form========== */
 
@@ -47,6 +48,11 @@ void Bureaucrat::decrementGrade() {
     if (_grade >= 150)
         throw Bureaucrat::GradeTooLowException();
     _grade++;
+}
+
+void Bureaucrat::signForm(Form& form)
+{
+    
 }
 
 /* ==========Exception Classes========== */

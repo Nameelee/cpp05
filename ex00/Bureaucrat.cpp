@@ -62,7 +62,7 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
  //의미: "이 함수는 std::exception 타입의 예외만 던질 수 있어."
  //void myFunc() throw()
  //의미: "이 함수는 던질 수 있는 예외 목록이 없어. 즉, 절대 예외를 던지지 않을 거야!"
- //
+ //다른 건 몰라도, 에러 메시지를 알려주는 what() 함수만큼은 실행 도중에 절대 또 다른 에러를 발생시키지 않겠다고 100% 보증해라!
  // [반환타입]  [함수이름]  [파라미터] [상수여부] [예외사양]
  //const char* what       ()      const      throw()
 {
