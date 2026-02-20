@@ -1,11 +1,11 @@
 
-NAME = Maggots
+NAME = Form
 
 CXX = clang++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Bureaucrat.cpp main.cpp 
+SRCS = Bureaucrat.cpp Form.cpp main.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 
