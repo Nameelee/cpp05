@@ -1,11 +1,11 @@
 
-NAME = Buro
+NAME = Aform
 
 CXX = clang++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Bureaucrat.cpp main.cpp 
+SRCS = Bureaucrat.cpp AForm.cpp main.cpp ShrubberyCreationForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
