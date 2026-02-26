@@ -1,11 +1,12 @@
 
-NAME = Aform
+NAME = Intern
 
 CXX = clang++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Bureaucrat.cpp AForm.cpp main.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS = Bureaucrat.cpp AForm.cpp main.cpp ShrubberyCreationForm.cpp\
+		RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

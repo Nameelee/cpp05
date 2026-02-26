@@ -1,5 +1,7 @@
 #include "Bureaucrat.h"
 #include "ShrubberyCreationForm.h"
+#include "RobotomyRequestForm.h"
+#include "PresidentialPardonForm.h"
 #include <iostream>
 
 int main(void)
@@ -60,5 +62,47 @@ int main(void)
     {
         std::cerr << "Error caught: " << e.what() << std::endl;
     }
+
+    // -------------------------------------------------------------------------
+    // TEST 4: Robotomy Request (50% random)
+    // -------------------------------------------------------------------------
+
+    std::cout << "\n=== Test 4: Robotomy Request (50% random) ===" << std::endl;
+    try {
+        Bureaucrat boss("Boss", 1);
+        RobotomyRequestForm robot("Bender");
+
+        boss.signForm(robot);
+
+        std::cout << "\n[ Trying surgery 4 times! ]\n";
+        boss.executeForm(robot);//boss is Bureaucrat class. I was confused with RobotomyRequestForm::execute
+        boss.executeForm(robot);
+        boss.executeForm(robot);
+        boss.executeForm(robot);
+
+    } catch (std::exception &e) {
+        std::cerr << "Error caught: " << e.what() << std::endl;
+    }
+
+    // -------------------------------------------------------------------------
+    // TEST 5: Presidential Pardon Form
+    // -------------------------------------------------------------------------
+
+    std::cout << "\n=== TEST 5: Presidential Pardon Form===" << std::endl;
+    try {
+        Bureaucrat peter("Peter", 1);
+        PresidentialPardonForm white("White");
+
+        peter.signForm(white);
+        peter.executeForm(white);
+        
+    } catch (std::exception &e) {
+        std::cerr << "Error caught: " << e.what() << std::endl;
+    }
+
     return (0);
 }
+
+
+
+    
