@@ -16,7 +16,6 @@ class Form
         const int           _gradeToExecute;
 
     public:
-        //Orthodoex Cannonical Form
         Form();
         Form(const std::string& name, int gradeToSign, int gradeToExecute);
         Form(const Form & obj);
@@ -32,7 +31,6 @@ class Form
         //Main Functionality
         void        beSigned(const Bureaucrat& Bureaucrat);
 
-        //Exception Classes
         class GradeTooHighException : public std::exception
         {
             public:

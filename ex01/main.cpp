@@ -73,6 +73,7 @@ int main(void)
     catch (std::exception &e)
     {
         std::cerr << "Exception caught from generating form: " << e.what() << std::endl;
+        //@@in Form.cpp there is no 'catch' so when Form.cpp throw error with *char this will catch and show that
     }
 
     // -------------------------------------------------------------------------

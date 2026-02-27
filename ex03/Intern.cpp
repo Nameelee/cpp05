@@ -4,12 +4,12 @@
 Intern::Intern() {}
 Intern::Intern(const Intern& copy)
 {
-    (void)copy;//@@what is this? 
+    (void)copy;//it is saying it will not use copy and to avoid compile error
 }
 
 Intern & Intern::operator=(const Intern & other) 
 {
-    (void)other;//@@what is this?
+    (void)other;//it is saying it will not use copy and to avoid compile error
     return *this;
 }
 
@@ -19,7 +19,7 @@ Intern::~Intern()
 
 AForm* Intern::makeShrubbery(std::string target)
 {
-    return new ShrubberyCreationForm(target);//@@why there is 'new' keyword?
+    return new ShrubberyCreationForm(target);
 }
 
 AForm* Intern::makeRobotomy(std::string target) {
@@ -32,6 +32,7 @@ AForm* Intern::makePresidential(std::string target) {
 
 AForm* Intern::makeForm(std::string formName, std::string target) {
     //static을 붙여서 프로그램 수명 주기 동안 딱 '한 번'만 배열을 생성합니다!
+    //if not, everytime this funcion executed, it will make array newly
     static const std::string formNames[3] = {
         "shrubbery creation", 
         "robotomy request", 

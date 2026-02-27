@@ -19,7 +19,7 @@ class Bureaucrat {
         Bureaucrat& operator=(const Bureaucrat& copy);
         ~Bureaucrat();
 
-        std::string getName() const;//'const' means 'I will never change the value in the getName
+        std::string getName() const;
         int getGrade() const;
 
         void incrementGrade();

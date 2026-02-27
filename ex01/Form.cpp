@@ -76,13 +76,13 @@ void Form::beSigned(const Bureaucrat& bureaucrat)
 /* ==========Exceptions========== */
 const char* Form::GradeTooHighException::what() const throw() 
 {
-    //'throw()' means this function will not give at any chance
-    return "Grade is too high!";
+    //'throw()' means this function will not give error at any chance
+    return "Grade of Form is too high!";
 }
 
 const char* Form::GradeTooLowException::what() const throw() 
 {
-    return "Grade is too low!";
+    return "Grade of Bureaucrat is too low or the grade you put is too low to create a form";
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& form) {

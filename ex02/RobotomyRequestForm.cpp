@@ -2,16 +2,19 @@
 #include "Bureaucrat.h"
 #include <fstream>
 
-RobotomyRequestForm::RobotomyRequestForm()  : AForm("RobotomyRequestForm", 72, 45), _target("default_target")
+RobotomyRequestForm::RobotomyRequestForm()
+  : AForm("RobotomyRequestForm", 72, 45), _target("default_target")
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string & target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string & target)
+ : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & copy) : AForm(copy), _target(copy._target)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & copy)
+ : AForm(copy), _target(copy._target)
 {
 
 }
@@ -28,26 +31,16 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-    if (!this->getIsSigned())
-    {
-        throw AForm::NotSignedException();
-    }
-
-    if (executor.getGrade() > this->getGradeToExecute())
-    {
-        throw AForm::GradeTooLowException();
-    }
-
+    checkRequirement(executor);
     std::cout << "Drrrrrrrrrrr... Bzzzzzt..." << std::endl;
 
-    if(rand() % 2 == 0)
+    if(rand() % 2 == 0)//condition of success
     {
-        std::cout << this->_target << "has been robotomized successfully!" << std::endl;
+        std::cout << this->_target << " has been robotomized successfully!" << std::endl;
     } 
     else
     {

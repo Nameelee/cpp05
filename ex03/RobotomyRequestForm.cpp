@@ -33,15 +33,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-    if (!this->getIsSigned())
-    {
-        throw AForm::NotSignedException();
-    }
-
-    if (executor.getGrade() > this->getGradeToExecute())
-    {
-        throw AForm::GradeTooLowException();
-    }
+    checkRequirement(executor);
 
     std::cout << "Drrrrrrrrrrr... Bzzzzzt..." << std::endl;
 

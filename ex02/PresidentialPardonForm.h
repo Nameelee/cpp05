@@ -1,4 +1,5 @@
-#pragma once//??
+#ifndef PRESIDENTALPARDONFORM_H
+#define PRESIDENTALPARDONFORM_H
 #include "AForm.h"
 #include <string>
 
@@ -15,3 +16,5 @@ class PresidentialPardonForm : public AForm
         ~PresidentialPardonForm();
         void execute(Bureaucrat const & executor) const;
 };
+
+#endif

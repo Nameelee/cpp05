@@ -3,9 +3,12 @@
 #include "RobotomyRequestForm.h"
 #include "PresidentialPardonForm.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 int main(void)
 {
+    srand(time(NULL));//pour perfect random
     // -------------------------------------------------------------------------
     // TEST 1: Shrubbery Creation Success
     // -------------------------------------------------------------------------
@@ -21,7 +24,7 @@ int main(void)
 
         boss.signForm(tree);
         tree.execute(boss);
-        std::cout << "Check if there is 'home _shrubbery file" << std::endl;//to check if the status of sign is changed
+        std::cout << "Check if there is 'home_shrubbery file" << std::endl;//to check if the status of sign is changed
     }
     catch (std::exception &e) 
     {

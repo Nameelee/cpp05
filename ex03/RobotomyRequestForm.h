@@ -1,7 +1,8 @@
-#pragma once//??
-#include "AForm.h"
-#include <string>
-#include <cstdlib> // rand(), srand()
+#ifndef ROBOTOMYREQUESTFORM_H
+# define ROBOTOMYREQUESTFORM_H
+# include "AForm.h"
+# include <string>
+# include <cstdlib> // rand(), srand()
 
 class RobotomyRequestForm : public AForm
 {
@@ -16,3 +17,5 @@ class RobotomyRequestForm : public AForm
         ~RobotomyRequestForm();
         void execute(Bureaucrat const & executor) const;
 };
+
+#endif

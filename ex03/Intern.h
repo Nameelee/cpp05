@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INTERN_H
+#define INTERN_H
 #include "AForm.h"
 #include "ShrubberyCreationForm.h"
 #include "RobotomyRequestForm.h"
@@ -20,3 +21,5 @@ class Intern {
 
         AForm * makeForm(std::string formName, std::string target);
 };
+
+#endif

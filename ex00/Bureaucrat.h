@@ -28,11 +28,16 @@ class Bureaucrat {
         {
             public:
                 virtual const char* what() const throw();
+                //virtual what() => this is overriding of what() function
+                //const char* => this will return 'const char*'
+                //const => this will not change the data inside
+                //throw() => I will not produce any error from this function itself
         };
 
-        class GradeTooLowException : public std::exception {
-        public:
-            virtual const char* what() const throw();
+        class GradeTooLowException : public std::exception 
+        {
+            public:
+                virtual const char* what() const throw();
         };
 };
 

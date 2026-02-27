@@ -36,7 +36,7 @@ AForm& AForm::operator=(const AForm & other)
     return *this;
 }
 
-AForm::~AForm()
+AForm::~AForm()//no need to add 'virtual' in implementing
 {
 }
 
@@ -73,10 +73,21 @@ void AForm::beSigned(const Bureaucrat& bureaucrat)
     _isSigned = true;
 }
 
+void AForm::checkRequirement(Bureaucrat const & executor) const 
+{
+    if (!this->_isSigned)
+    {
+        throw AForm::NotSignedException();
+    }
+    if(executor.getGrade() > this->_gradeToExecute)
+    {
+        throw AForm::GradeTooLowException();
+    }
+}
+
 /* ==========Exceptions========== */
 const char* AForm::GradeTooHighException::what() const throw() 
 {
-    //'throw()' means this function will not give at any chance
     return "Grade is too high!";
 }
 

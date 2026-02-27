@@ -1,6 +1,7 @@
-#pragma once//??
-#include "AForm.h"
-#include <string>
+#ifndef SHRUBBERYCREATIONFORM_H
+# define SHRUBBERYCREATIONFORM_H
+# include "AForm.h"
+# include <string>
 
 class ShrubberyCreationForm : public AForm
 {
@@ -16,3 +17,5 @@ class ShrubberyCreationForm : public AForm
         void execute(Bureaucrat const & executor) const;
 
 };
+
+#endif
